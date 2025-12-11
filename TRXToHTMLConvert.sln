@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRXToHTMLConvert", "TRXToHTMLConvert.csproj", "{58DC9945-8A76-4E7D-AB70-3D4C1ACFE539}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58DC9945-8A76-4E7D-AB70-3D4C1ACFE539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DC9945-8A76-4E7D-AB70-3D4C1ACFE539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DC9945-8A76-4E7D-AB70-3D4C1ACFE539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58DC9945-8A76-4E7D-AB70-3D4C1ACFE539}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B01B65EF-A951-4F4E-B14C-6844E4D9EF24}
+	EndGlobalSection
+EndGlobal

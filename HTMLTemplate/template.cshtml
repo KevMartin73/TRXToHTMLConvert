@@ -1,0 +1,195 @@
+<html>
+<head><meta charset="utf-8"/>
+<title>Automation Test Report</title>
+<style type="text/css">
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: lightgrey;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+#html-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@("@")media only screen and (max-width: 720px) {
+  #summary {
+    flex-direction: column;
+  }
+  #summary > div {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  #summary > div:first-child {
+    margin-top: 0;
+  }
+}
+
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: darkgreen;
+  border-left: 0.4rem solid darkgreen;
+  padding-left: 0.5rem;
+}
+.summary-failed,
+.summary-obsolete-snapshots {
+  color: red;
+  border-left: 0.4rem solid red;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: burlywood;
+  border-left: 0.4rem solid burlywood;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
+
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: darkgreen;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: red;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #burlywood;
+}
+
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-method-name {
+  width: 50%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-status {
+  width: 25%;
+  text-align: right;
+}
+.test-duration {
+  width: 25%;
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.test-body {
+  width: 100%;
+  text-align: left;
+  background-color: lightgray;
+  color: black;
+}
+
+.test-class-container {
+  margin-bottom: 2rem;
+}
+.test-class-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.test-class-info .class-name {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+</style>
+</head>
+<body>
+<div id="html-content">
+    <header>
+        <h1 id="title">Automation Test Report</h1>
+    </header>
+    <div id="metadata-container">
+        <div id="timestamp">This test run started: @Model.StartTime</div>
+        <div id="summary">
+            <div id="test-summary">
+                <div class="summary-total">Test Cases/Scenarios (@Model.Summary.Total)</div>
+                <div class="summary-passed">@Model.Summary.Passed passed</div>
+                <div class="summary-failed summary-empty">@Model.Summary.Failed failed</div>
+                <div class="summary-pending summary-empty">@Model.Summary.Pending pending</div>
+            </div>
+        </div>
+    </div>
+@foreach (var testClass in Model.TestClasses)
+{
+  <div class="test-class-container">
+    <div class="test-class-info">
+        <div class="class-name">@testClass.ClassName</div>
+    </div>
+    <div>
+    @foreach (var testResult in testClass.TestResults)
+    {
+        <div class="test-result @testResult.Outcome">
+            <div class="test-info">
+              <div class="test-method-name">@testResult.TestMethod</div>
+              <div class="test-status">Result @testResult.Outcome</div>
+              <div class="test-duration">Duration @testResult.Duration</div>
+            </div>
+            <textarea readonly rows="20" cols="250" class="test-body">@testResult.TestBody</textarea>
+        </div>
+    }
+    </div>
+  </div>
+}
+</div>
+</body>

@@ -1,0 +1,11 @@
+﻿global using ConsoleAppFramework;
+global using Microsoft.Extensions.Hosting;
+global using System.Xml.Linq;
+global using RazorEngine;
+global using RazorEngine.Templating;
+global using System.Linq;
+global using System.Reflection;
+global using System.Collections.Generic;
+global using System.Threading.Tasks;
+global using System.IO;
+global using TRXToHTMLConvert;
