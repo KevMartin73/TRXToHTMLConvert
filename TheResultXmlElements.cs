@@ -26,9 +26,17 @@
 
             string results = string.Join(" ", [.. elem.DescendantNodes().Select(x => x.ToString())]);
             TestBody = results.Split(">\r\n")[1];
-            TestBody = TestBody.Replace("-&gt;", "").Replace("</StdOut", "")
-                .Replace("<StdOut>", "").Replace("+&lt;", "");
+            TestBody = StripTags(TestBody);
+        }
 
+        private string StripTags(string inFile)
+        {
+            return inFile.
+                Replace("-&gt;", "").
+                Replace("</StdOut", "").
+                Replace("<StdOut>", "").
+                Replace("&lt;pre&gt;", "").
+                Replace("+&lt;", "");
         }
 
         /// <summary>

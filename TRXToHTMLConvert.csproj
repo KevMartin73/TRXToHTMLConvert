@@ -12,8 +12,8 @@
     <Description>TRXToHTMLConvert is a cool command line tool for converting the output result TRX file of VSTest log into a more readable html File.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Copyright>Kev Martin</Copyright>
-    <PackageProjectUrl>https://github.com/HikosakaRyo/trxlog2html</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/HikosakaRyo/trxlog2html</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/KevMartin73/TRXToHTMLConvert</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/KevMartin73/TRXToHTMLConvert</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageReleaseNotes>1.0.0: Support for newer frameworks only (.NET 8.0, .NET 9.0)
@@ -23,7 +23,8 @@
 
   <ItemGroup>
     <PackageReference Include="ConsoleAppFramework" Version="3.3.2" />
-    <PackageReference Include="RazorEngine.NetCore" Version="3.1.0" />
+    <PackageReference Include="RazorEngine.NetCore" Version="3.1.1" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>
