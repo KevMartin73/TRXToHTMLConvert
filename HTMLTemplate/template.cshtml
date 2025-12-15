@@ -152,6 +152,7 @@ header {
   font-family: monospace;
   font-size: 1rem;
 }
+textarea { font-size: 18px }
 </style>
 </head>
 <body>
@@ -185,7 +186,7 @@ header {
               <div class="test-status">Result @testResult.Outcome</div>
               <div class="test-duration">Duration @testResult.Duration</div>
             </div>
-            <textarea readonly rows="20" cols="250" class="test-body">@testResult.TestBody</textarea>
+            <textarea readonly rows="30" cols="300" class="test-body">@testResult.TestBody</textarea>
         </div>
     }
     </div>
@@ -193,3 +194,4 @@ header {
 }
 </div>
 </body>
+</html>

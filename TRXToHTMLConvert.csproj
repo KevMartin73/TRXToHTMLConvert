@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>1.0.0</Version>    
+    <Version>1.0.2</Version>    
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <PackAsTool>true</PackAsTool>
@@ -16,9 +16,10 @@
     <RepositoryUrl>https://github.com/KevMartin73/TRXToHTMLConvert</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>1.0.0: Support for newer frameworks only (.NET 8.0, .NET 9.0)
+    <PackageReleaseNotes>1.0.1: Additional readme notes added
 </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Title>TRXToHTMLConvert</Title>
   </PropertyGroup>
 
   <ItemGroup>
